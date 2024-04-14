@@ -1,9 +1,6 @@
-drop table if exists title;
-drop type if exists mpa_rating;
-
 create type mpa_rating as enum ('G','PG','PG-13','R','NC-17');
 
-create table title(
+create table if not exists title(
     id serial primary key,
     name varchar(128) not null,
     original_name varchar(128),
@@ -16,5 +13,5 @@ create table title(
     age_constraint int
 );
 
-create index idx_title_name on title(name);
-create index idx_title_original_name on title(original_name);
+create index if not exists idx_title_name on title(name);
+create index if not exists idx_title_original_name on title(original_name);

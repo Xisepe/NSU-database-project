@@ -1,6 +1,4 @@
-drop table if exists episode;
-
-create table episode
+create table if not exists episode
 (
     title_id       int,
     season_number  int,

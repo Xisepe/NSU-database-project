@@ -5,3 +5,9 @@ spring:
     url: ${SPRING_DATASOURCE_URL}
     username: ${SPRING_DATASOURCE_USERNAME}
     password: ${SPRING_DATASOURCE_PASSWORD}
+  jooq:
+    sql-dialect: postgres
+  flyway:
+    baseline-on-migrate: true
+    baseline-version: 0
+    default-schema: "public"

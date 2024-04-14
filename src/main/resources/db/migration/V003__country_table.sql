@@ -1,12 +1,10 @@
-drop table if exists country;
-
-create table country
+create table if not exists country
 (
     country_id   serial primary key,
     country_name varchar(32) not null unique
 );
 
-create index idx_country_name on country (country_name);
+create index if not exists idx_country_name on country (country_name);
 
 insert into country(country_name)
 values ('США'),

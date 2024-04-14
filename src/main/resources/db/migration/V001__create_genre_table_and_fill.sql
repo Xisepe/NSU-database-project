@@ -1,12 +1,10 @@
-drop table if exists genre;
-
-create table genre
+create table if not exists genre
 (
     genre_id   serial primary key,
     genre_name varchar(32) unique
 );
 
-create index idx_genre_name ON genre (genre_name);
+create index if not exists idx_genre_name ON genre (genre_name);
 
 insert into genre(genre_name)
 values ('драма'),
